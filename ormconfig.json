@@ -1,0 +1,17 @@
+{
+   "type": "postgres",
+   "host": "localhost",
+   "port": 5432,
+   "username": "nestUser",
+   "password": "nest123456",
+   "database": "NestBase",
+   "entities": [
+      "src/domain/entities/**/*.ts"
+   ],
+   "migrations": [
+      "src/infra/database/migration/**/*.ts"
+   ],
+   "cli": {
+        "migrationsDir": "src/infra/database/migration"
+    }
+}

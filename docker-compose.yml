@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  mysql:
+    container_name: 'mysql_nest_docker'
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'NestBase'
+      MYSQL_USER: 'nestUser'
+      MYSQL_PASSWORD: 'nest123456'
+      MYSQL_ROOT_PASSWORD: 'nest123456'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+  postgre:
+    container_name: 'postgres_nest_docker'
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: nest123456
+      POSTGRES_USER: nestUser
+      POSTGRES_DB: NestBase
+    ports:
+      - '5432:5432'
+    expose:
+      - '5432'
+  mongo:
+    image: mongo:4.2
+    container_name: mongo_nest_docker
+    ports:
+      - '27017:27017'
+    expose:
+      - '27017'
+    environment:
+      MONGO_INITDB_DATABASE: NestBase
+      MONGO_INITDB_ROOT_USERNAME: nestUser
+      MONGO_INITDB_ROOT_PASSWORD: nest123456
